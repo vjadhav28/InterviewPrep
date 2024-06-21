@@ -46,13 +46,10 @@ public static void leftRotation(int[] arr, int k) {
         int k = 3;
 
         System.out.println("Original Array");
-        //Displays the original array
         System.out.println(Arrays.toString(arr));
 
-        //Calls the left rotation function
         leftRotation(arr,k);
 
-        //Displays the rotated array
         System.out.println("Reversed Array");
         System.out.println(Arrays.toString(arr));
 

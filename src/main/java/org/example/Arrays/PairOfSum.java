@@ -1,5 +1,8 @@
 package org.example.Arrays;
 
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.IntStream;
+
 public class PairOfSum {
     public static void main(String[] args)
     {
@@ -9,14 +12,14 @@ public class PairOfSum {
         getPairsCount(arr, K);
     }
 
-    // Prints number of pairs in arr[0..n-1] with sum equal
-    // to 'sum'
+    // Prints number of pairs in arr[0..n-1] with sum equal to 'sum'
     public static void getPairsCount(int[] arr, int K)
     {
         // Initialize result
-        int count = 0;
+        int count =0;
 
-        // Consider all possible pairs and check their sums
+
+//        // Consider all possible pairs and check their sums
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if ((arr[i] + arr[j]) == K) {

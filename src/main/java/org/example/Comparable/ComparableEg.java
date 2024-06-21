@@ -1,6 +1,7 @@
 package org.example.Comparable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ComparableEg {
@@ -15,6 +16,8 @@ public class ComparableEg {
 
         System.out.println("BEFORE SORTING"+list);
         Collections.sort(list);
+
+        Collections.sort(list,Collections.reverseOrder());
         System.out.println("AFTER SORTING"+ list);
     }
 }

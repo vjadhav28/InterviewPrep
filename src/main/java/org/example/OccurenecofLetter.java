@@ -15,9 +15,7 @@ public class OccurenecofLetter {
         List<String> str = Arrays.asList(arr);
         Map<String, Long> cnt = str.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
         System.out.println(cnt);
-//
-//        int max =0;
-//        res.entrySet().stream().forEach(T->T.getValue());
+
 
         System.out.println(res);
     }

@@ -2,8 +2,8 @@ package org.example.Numbers;
 
 public class SwapWithout {
     public static void main(String[] args) {
-        int x = 10;
-        int y= 8;
+        int x = 5;
+        int y= 10;
 
         x=x+y;
         y=x-y;

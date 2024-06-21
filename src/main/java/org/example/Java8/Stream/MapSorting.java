@@ -12,7 +12,7 @@ public class MapSorting {
 
         map.entrySet()
                 .stream()
-                .sorted(Map.Entry.<String, Integer>comparingByValue())
+                .sorted(Map.Entry.comparingByValue())
                 .forEach(System.out::println);
 
     }

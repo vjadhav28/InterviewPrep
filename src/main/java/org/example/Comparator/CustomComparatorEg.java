@@ -15,25 +15,36 @@ public class CustomComparatorEg {
         list.add(new Student(3,"kkk","geography"));
         list.add(new Student(5,"cbg","history"));
 
-        Optional<Student> eldestFootballer = list.stream()
+        Optional<Student> eldestFootballer =
+                list.stream()
                 .max(Comparator.comparing(Student::getBranch));
+
         System.out.println("eldestFootballer" + eldestFootballer);
 
-        List<Student> sorted = list.stream().sorted(Comparator.comparing(Student::getId)).collect(Collectors.toList());
+        Comparator<? super Student> name = new  NameComparator();
+        List<Student> sorted =
+                list.stream()
+                        .sorted(name)
+                        .toList();
+
         System.out.println("Sorted lis is "+ sorted);
 
-        Map<String, Set<String>> groupByBranch = list.stream().
-                collect(Collectors.groupingBy(
-                        Student::getBranch,
-                TreeMap::new,Collectors.mapping(Student::getName,Collectors.toSet())));
+        Map<String, Set<String>> groupByBranch =
+                list.stream().
+                        collect(Collectors.groupingBy(
+                                Student::getBranch,
+                                TreeMap::new,
+                                Collectors.mapping(Student::getName,Collectors.toSet())));
 
-        System.out.println(groupByBranch);
+        System.out.println("groupByBranch"+groupByBranch);
 
-        Map<Integer, List<String>> employeeNamesByAge = list.stream()
+        Map<Integer, List<String>> employeeNamesByAge =
+                list.stream()
                 .collect(Collectors.groupingBy(
                                 Student::getId,
                                 Collectors.mapping(Student::getName, Collectors.toList())));
-        System.out.println(employeeNamesByAge);
+
+        System.out.println("employeeNamesByAge"+employeeNamesByAge);
 
         System.out.println("BEFORE SORTING = " + list);
 

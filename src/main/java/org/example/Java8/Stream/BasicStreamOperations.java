@@ -20,24 +20,18 @@ public class BasicStreamOperations {
                 map(Map.Entry::getKey).findFirst();
         System.out.println(ans);
 
-        List<Student> list = new ArrayList<>();
-        list.add(new Student(1,"abc","computer"));
-        list.add(new Student(9,"cbg","history"));
-        list.add(new Student(6,"hahs","geography"));
-        list.add(new Student(4,"kkk","computer"));
-        list.add(new Student(3,"kkk","geography"));
-        list.add(new Student(5,"cbg","history"));
+
 
         Optional<String> ans1 = books.entrySet().stream().filter(a->a.getValue().equalsIgnoreCase("ds"))
                 .map(Map.Entry::getKey).findFirst();
         System.out.println(ans1);
 
-        Optional<Student> eldestFootballer = list.stream()
-                .max(Comparator.comparing(Student::getBranch));
-        System.out.println("eldestFootballer " + eldestFootballer);
+//        Optional<Student> eldestFootballer = list.stream()
+//                .max(Comparator.comparing(Student::getBranch));
+//        System.out.println("eldestFootballer " + eldestFootballer);
 
-        List<Student> sorted = list.stream().sorted(Comparator.comparing(Student::getId)).toList();
-        System.out.println("Sorted lis is "+ sorted);
+//        List<Student> sorted = list.stream().sorted(Comparator.comparing(Student::getId)).toList();
+//        System.out.println("Sorted lis is "+ sorted);
 
         //-----------------------------------------------------------------------------------------------------------------------
        //change elememts into uppercase and join using ,
